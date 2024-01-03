@@ -1,0 +1,42 @@
+.icare-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  position: absolute;
+  z-index: 1000;
+}
+.sidebar {
+  width: 60px;
+  padding-bottom: 15px;
+  flex-flow: column nowrap;
+}
+.top-bar {
+  height: 60px;
+  padding-right: 15px;
+  flex-flow: row nowrap;
+  .navbar-icon {
+      padding: 0 5px;
+  }
+}
+
+.navbar-icon {
+  height: 50px;
+  font-size: 1.6em;
+  color: #36558B;
+  text-align: center;
+  padding: 5px 0;
+  &.logout {
+      display: none;
+  }
+  &:not(.active):hover {
+      cursor: pointer;
+      color: #36558B;
+  }
+
+}
+.active {
+  padding: 10px;
+  background-color: #F67869;
+  color: #36558B;
+}

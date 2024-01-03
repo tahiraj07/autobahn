@@ -1,0 +1,46 @@
+<nav fxLayout="column" fxLayout.xs="row"
+    class="icare-nav sidebar bg-icare">
+    <div class="max-width navbar-icon"
+        routerLinkActive="active"
+        matTooltip="Dashboard"
+        matTooltipPosition="after"
+        [routerLink]="['dash']"
+        routerLinkActive="active" >
+        <mat-icon>personal_video_24px</mat-icon>
+    </div>
+    <div class="max-width navbar-icon"
+        routerLinkActive="active"
+        matTooltip="Facilities"
+        matTooltipPosition="after"
+        [routerLink]="['reports']"
+        routerLinkActive="active"
+        >
+        <mat-icon>domain_24px</mat-icon>
+    </div>
+    <div class="max-width navbar-icon"
+        routerLinkActive="active"
+        matTooltip="IntelyPros"
+        matTooltipPosition="after"
+        [routerLink]="['users']"
+        routerLinkActive="active"  >
+        <mat-icon>group_24px</mat-icon>
+    </div>
+    <div class="max-width navbar-icon"
+        routerLinkActive="active"
+        matTooltip="Onboarding"
+        matTooltipPosition="after" >
+        <mat-icon>how_to_reg_24px</mat-icon>
+    </div>
+    <div class="max-width navbar-icon"
+        routerLinkActive="active"
+        matTooltip="Credentialing"
+        matTooltipPosition="after" >
+        <mat-icon>description_24px</mat-icon>
+    </div>
+    <div class="max-width navbar-icon logout"
+        matTooltip="Logout"
+        matTooltipPosition="after"
+        automation-id="click-navbar-icon-logout">
+        <mat-icon class="power-icon">power_settings_new</mat-icon>
+    </div>
+</nav>
