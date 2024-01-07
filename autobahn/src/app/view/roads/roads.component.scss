@@ -5,7 +5,7 @@
       width: 50px;
   }
 .right-side {
-  width: 95%;
+  width: 100%;
 .main-header {
   display: flex;
   flex-wrap: wrap;
@@ -19,10 +19,14 @@
       }
       }
       .search {
-          padding-left: 100px;
+          padding-left: 50px;
           width: 30%;
+          margin-right: 10px;
           .lbl-search {
-              color: #48A8B6;
+              color: #333;
+          }
+          .mdc-text-field__input {
+            color: #333 !important;
           }
       }
 }
@@ -43,7 +47,7 @@
 }
 .table-section {
   overflow-x: scroll;
-  margin: 50px;
+  margin-left: 50px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 10px;
   .custom-table {
@@ -102,4 +106,9 @@ mat-cell, mat-header-cell {
 }
 }
 }
+}
+
+
+.mdc-text-field__input {
+  color: #333 !important;
 }

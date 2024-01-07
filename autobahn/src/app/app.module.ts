@@ -8,6 +8,8 @@ import { MaterialModule } from './shared/material.module';
 import { NavbarModule } from './shared/side-nav/side-nav.module';
 import { RoadsComponent } from './view/roads/roads.component';
 import { ViewModule } from './view/view.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { ViewModule } from './view/view.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     NavbarModule,
     ViewModule,

@@ -1,0 +1,12 @@
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  mat-form-field {
+      width: 45%;
+      padding: 10px;
+  }
+}
+mat-label {
+  color: #48A8B6 !important;
+}

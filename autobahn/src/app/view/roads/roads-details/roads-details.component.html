@@ -1,0 +1,136 @@
+<h1 mat-dialog-title>Form Information</h1>
+<form [formGroup]="editForm">
+  <mat-dialog-content>
+    <div class="input-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Extent</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.extent }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Identifier</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.identifier }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Icon</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.icon }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Is Blocked</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.isBlocked }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Description</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ descriptions['Beginn'] }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.title }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Point</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.point}}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Display Type</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.display_type}}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Future</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.future }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Subtitle</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.subtitle}}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Start</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.startTimestamp }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Lat</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.coordinate.lat}}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Long</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.coordinate.long }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Future</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.future }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Dauer</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ roadData.startTimestamp }}"
+        />
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button
+      mat-button
+      type="button"
+      mat-dialog-close
+    >
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</form>
