@@ -7,6 +7,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { RoadsModel } from 'src/app/models/RoadsModel';
 import { RoadsDetailsComponent } from '../roads/roads-details/roads-details.component';
 import { WebcamsDetailsComponent } from '../webcams/webcams-details/webcams-details.component';
+import { ParkingDetailsComponent } from '../parking/parking-details/parking-details.component';
+import { WarningDetailsComponent } from '../warning/warning-details/warning-details.component';
+import { ElectricDetailsComponent } from '../electric/electric-details/electric-details.component';
+import { ClosureDetailsComponent } from '../closure/closure-details/closure-details.component';
 
 @Component({
   selector: 'app-main-table',
@@ -66,6 +70,34 @@ export class MainTableComponent implements OnChanges {
 
       case "web":
         this.dialog.open(WebcamsDetailsComponent, {
+          width: '855px',
+          data: id
+        })
+        break;
+
+      case "park":
+        this.dialog.open(ParkingDetailsComponent, {
+          width: '855px',
+          data: id
+        })
+        break;
+
+      case "warn":
+        this.dialog.open(WarningDetailsComponent, {
+          width: '855px',
+          data: id
+        })
+        break;
+
+      case "electric":
+        this.dialog.open(ElectricDetailsComponent, {
+          width: '855px',
+          data: id
+        })
+        break;
+
+      case "closure":
+        this.dialog.open(ClosureDetailsComponent, {
           width: '855px',
           data: id
         })

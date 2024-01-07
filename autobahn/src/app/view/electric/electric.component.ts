@@ -1,22 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, Subscription, tap } from 'rxjs';
-import { ParkingModel } from 'src/app/models/ParkingModel';
+import { ChargingStationModel } from 'src/app/models/CharginStationModel';
 import { MainService } from 'src/app/shared/services/main.service';
 
 @Component({
-  selector: 'app-parking',
-  templateUrl: './parking.component.html',
-  styleUrls: ['./parking.component.scss'],
+  selector: 'app-electric',
+  templateUrl: './electric.component.html',
+  styleUrls: ['./electric.component.scss']
 })
-export class ParkingComponent implements OnInit {
+export class ElectricComponent implements OnInit {
   private sub: Subscription;
 
   private _unsubscribe = new Subject<void>();
 
-  parkingData: ParkingModel[] = [];
+  chargingData: ChargingStationModel[] = [];
 
   constructor(private mainService: MainService) {}
-  values: any;
   highways: string[] = [];
   selectedHighway: string = '';
 
@@ -32,7 +31,7 @@ export class ParkingComponent implements OnInit {
         })
       )
       .subscribe(() => {
-        this.getParkingData(this.selectedHighway);
+        this.getElectricData(this.selectedHighway);
       });
   }
 
@@ -41,10 +40,10 @@ export class ParkingComponent implements OnInit {
     this._unsubscribe.complete();
   }
 
-  getParkingData(selected: string) {
-    this.mainService.getParking(selected).subscribe(
+  getElectricData(selected: string) {
+    this.mainService.getElectric(selected).subscribe(
       (data) => {
-        this.parkingData = data.parking_lorry;
+        this.chargingData = data.electric_charging_station;
       },
       (error) => {
         console.error('Error fetching construction sites', error);
@@ -52,7 +51,7 @@ export class ParkingComponent implements OnInit {
     );
   }
 
-  trackById(index: number, item: ParkingModel) {
+  trackById(index: number, item: ChargingStationModel) {
     return item.identifier;
   }
 }

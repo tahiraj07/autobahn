@@ -1,8 +1,8 @@
 <div class="main-body">
   <div class="right-side">
   <div class="main-header">
-
-    <mat-form-field appearance="outline"  class="search">
+    <h3>Select Highway</h3>
+    <mat-form-field   class="search">
       <mat-label>Highway</mat-label>
       <mat-select [(value)]="selectedHighway"  (selectionChange)="getRoadsData($event.value)">
         <mat-option *ngFor="let highway of highways" [value]="highway">{{ highway }}</mat-option>

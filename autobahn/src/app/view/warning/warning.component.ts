@@ -1,22 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, Subscription, tap } from 'rxjs';
-import { ParkingModel } from 'src/app/models/ParkingModel';
+import { WarningModel } from 'src/app/models/WarningModel';
 import { MainService } from 'src/app/shared/services/main.service';
 
 @Component({
-  selector: 'app-parking',
-  templateUrl: './parking.component.html',
-  styleUrls: ['./parking.component.scss'],
+  selector: 'app-warning',
+  templateUrl: './warning.component.html',
+  styleUrls: ['./warning.component.scss']
 })
-export class ParkingComponent implements OnInit {
+export class WarningComponent implements OnInit {
   private sub: Subscription;
 
   private _unsubscribe = new Subject<void>();
 
-  parkingData: ParkingModel[] = [];
+  warningData: WarningModel[] = [];
 
   constructor(private mainService: MainService) {}
-  values: any;
   highways: string[] = [];
   selectedHighway: string = '';
 
@@ -32,7 +31,7 @@ export class ParkingComponent implements OnInit {
         })
       )
       .subscribe(() => {
-        this.getParkingData(this.selectedHighway);
+        this.getWarningData(this.selectedHighway);
       });
   }
 
@@ -41,10 +40,10 @@ export class ParkingComponent implements OnInit {
     this._unsubscribe.complete();
   }
 
-  getParkingData(selected: string) {
-    this.mainService.getParking(selected).subscribe(
+  getWarningData(selected: string) {
+    this.mainService.getWarning(selected).subscribe(
       (data) => {
-        this.parkingData = data.parking_lorry;
+        this.warningData = data.warning;
       },
       (error) => {
         console.error('Error fetching construction sites', error);
@@ -52,7 +51,7 @@ export class ParkingComponent implements OnInit {
     );
   }
 
-  trackById(index: number, item: ParkingModel) {
+  trackById(index: number, item: WarningModel) {
     return item.identifier;
   }
 }

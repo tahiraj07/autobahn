@@ -23,8 +23,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       flex-wrap: wrap;
       margin-top: 15px;
 
+      h3 {
+        margin-left: 100px;
+        padding-top: 15px;
+      }
       .search {
-        padding-left: 50px;
+        padding-left: 60px;
         width: 30%;
         margin-right: 10px;
 
@@ -33,6 +37,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         }
 
         .mdc-text-field__input {
+          border: 1px solid #333;
           color: #333 !important;
         }
       }
@@ -133,5 +138,5 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 .mdc-text-field__input {
-  color: #333 !important;
+  color: #fff !important;
 }

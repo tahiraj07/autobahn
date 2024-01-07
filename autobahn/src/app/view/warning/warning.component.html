@@ -4,12 +4,12 @@
     <h3>Select Highway</h3>
     <mat-form-field  class="search">
       <mat-label>Highway</mat-label>
-      <mat-select [(value)]="selectedHighway"  (selectionChange)="getWebData($event.value)">
+      <mat-select [(value)]="selectedHighway"  (selectionChange)="getWarningData($event.value)">
         <mat-option *ngFor="let highway of highways" [value]="highway">{{ highway }}</mat-option>
       </mat-select>
     </mat-form-field>
 
   </div>
-  <app-main-table [data]="webData" identifier="web"></app-main-table>
+  <app-main-table [data]="warningData" identifier="warn"></app-main-table>
 </div>
 </div>

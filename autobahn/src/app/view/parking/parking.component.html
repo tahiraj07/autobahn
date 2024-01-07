@@ -1,1 +1,15 @@
-<p>parking works!</p>
+<div class="main-body">
+  <div class="right-side">
+  <div class="main-header">
+    <h3>Select Highway</h3>
+    <mat-form-field  class="search">
+      <mat-label>Highway</mat-label>
+      <mat-select [(value)]="selectedHighway"  (selectionChange)="getParkingData($event.value)">
+        <mat-option *ngFor="let highway of highways" [value]="highway">{{ highway }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <app-main-table [data]="parkingData" identifier="park"></app-main-table>
+</div>
+</div>
