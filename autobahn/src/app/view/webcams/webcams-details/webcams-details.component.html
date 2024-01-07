@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Roads Detail</h1>
+<h1 mat-dialog-title>Webcam Details</h1>
 <form [formGroup]="editForm">
   <mat-dialog-content>
     <div class="input-row">
@@ -7,7 +7,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.extent }}"
+          value="{{ webData.extent }}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -15,7 +15,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.identifier }}"
+          value="{{ webData.identifier }}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -23,7 +23,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.icon }}"
+          value="{{ webData.icon }}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -31,7 +31,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.isBlocked }}"
+          value="{{ webData.isBlocked }}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -39,7 +39,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.description }}"
+          value="{{ webData.description }}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -47,7 +47,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.title }}"
+          value="{{ webData.title }}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -55,7 +55,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.point}}"
+          value="{{ webData.point}}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -63,7 +63,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.display_type}}"
+          value="{{ webData.display_type}}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -71,7 +71,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.future }}"
+          value="{{ webData.future }}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -79,15 +79,15 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.subtitle}}"
+          value="{{ webData.subtitle}}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
-        <mat-label>Start</mat-label>
+        <mat-label>Image</mat-label>
         <input
           matInput
           type="text"
-          value="{{ roadData.startTimestamp }}"
+          value="{{ webData.imageurl }}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -95,7 +95,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.coordinate.lat}}"
+          value="{{ webData.coordinate.lat}}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -103,7 +103,7 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.coordinate.long }}"
+          value="{{ webData.coordinate.long }}"
         />
       </mat-form-field>
       <mat-form-field appearance="outline" class="half-width">
@@ -111,7 +111,15 @@
         <input
           matInput
           type="text"
-          value="{{ roadData.future }}"
+          value="{{ webData.future }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Link</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ webData.linkurl }}"
         />
       </mat-form-field>
     </div>

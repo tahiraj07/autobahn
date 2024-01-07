@@ -16,45 +16,20 @@ import { RoadsDetailsComponent } from './roads-details/roads-details.component';
   styleUrls: ['./roads.component.scss']
 })
 export class RoadsComponent implements OnInit  {
-  searchText = new FormControl('');
-  searching = false;
   private sub: Subscription;
   roadsData: RoadsModel[] = [];
+  roadDataSource: MatTableDataSource<RoadsModel>;
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   private _unsubscribe = new Subject<void>();
 
-  dataSource = new MatTableDataSource<RoadsModel>([]);
-
-  displayColumns = [];
-  displayColumns$: Observable<string[]>;
-  normalDisplayColumns = [
-    'extent',
-    'identifier',
-    'icon',
-    'isBlocked',
-    'title',
-    'point',
-    'display_type',
-    'future',
-    'subtitle',
-    'startTimestamp'
-  ];
-  mediumnDisplayColumns = ['extent', 'identifier'];
-  smallDisplayColumns = ['identifier'];
-
   constructor(
     private mainService: MainService,
-    private mediaObserver: MediaObserver,
-    private dialog: MatDialog
+    private mediaObserver: MediaObserver
   ) {
-    this.searchText.valueChanges.pipe(debounceTime(1000)).subscribe((text: any) => {
-      this.applyFilter(text);
-    });
   }
-  carType: string;
   values: any;
   highways: string[] = [];
   selectedHighway: string = '';
@@ -72,17 +47,6 @@ export class RoadsComponent implements OnInit  {
       console.log(this.selectedHighway);
     });
 
-    this.displayColumns$ = this.mediaObserver.asObservable().pipe(
-      map(() => {
-        if (this.mediaObserver.isActive('lt-sm')) {
-          return this.smallDisplayColumns;
-        } else if (this.mediaObserver.isActive('lt-lg')) {
-          return this.mediumnDisplayColumns;
-        } else {
-          return this.normalDisplayColumns;
-        }
-      })
-    );
   }
 
   ngOnDestroy() {
@@ -90,18 +54,9 @@ export class RoadsComponent implements OnInit  {
     this._unsubscribe.complete();
   }
 
-  applyFilter(filterString: string) {
-    this.dataSource.filter = filterString;
-  }
-
   getRoadsData(selected: string) {
     this.mainService.getRoadworks(selected).subscribe((data) => {
         this.roadsData = data.roadworks;
-        this.dataSource = new MatTableDataSource<RoadsModel>(data.roadworks);
-        this.dataSource.paginator = this.paginator;
-        this.sort.sort({ id: 'title', start: 'asc' } as MatSortable);
-        this.dataSource.sort = this.sort;
-        this.searchText.setValue('');
       },
       (error) => {
         console.error('Error fetching construction sites', error);
@@ -111,16 +66,6 @@ export class RoadsComponent implements OnInit  {
 
   trackById(index: number, item: RoadsModel) {
     return item.identifier;
-  }
-
-  onRowClicked(identifier: string) {
-    this.dialog.open(RoadsDetailsComponent, {
-      width: '855px',
-      data: identifier
-    }).afterClosed().subscribe(differences => {
-      // if (differences) {
-      // }
-    });
   }
 
 

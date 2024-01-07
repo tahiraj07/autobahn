@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RoadsComponent } from './view/roads/roads.component';
+import { WebcamsComponent } from './view/webcams/webcams.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,10 @@ const routes: Routes = [
       {
         path: '',
         component: RoadsComponent
+      },
+      {
+        path: 'webcam',
+        component: WebcamsComponent
       }
     ],
   }

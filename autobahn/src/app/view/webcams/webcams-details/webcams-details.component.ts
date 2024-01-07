@@ -1,24 +1,23 @@
 import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { RoadsModel } from 'src/app/models/RoadsModel';
+import { WebcamModel } from 'src/app/models/WebcamModel';
 import { MainService } from 'src/app/shared/services/main.service';
 
 @Component({
-  selector: 'app-roads-details',
-  templateUrl: './roads-details.component.html',
-  styleUrls: ['./roads-details.component.scss']
+  selector: 'app-webcams-details',
+  templateUrl: './webcams-details.component.html',
+  styleUrls: ['./webcams-details.component.scss']
 })
-export class RoadsDetailsComponent {
-
+export class WebcamsDetailsComponent {
   id: any;
-  roadData: RoadsModel;
+  webData: WebcamModel;
   active: boolean;
   editForm: FormGroup;
   @Output() refresh = new EventEmitter<void>();
   constructor(
     private main_Service: MainService,
-    private dialogRef: MatDialogRef<RoadsDetailsComponent>,
+    private dialogRef: MatDialogRef<WebcamsDetailsComponent>,
     @Inject(MAT_DIALOG_DATA) public identifier: string) {
     this.id = identifier;
   }
@@ -29,9 +28,8 @@ export class RoadsDetailsComponent {
   }
 
   getDetails() {
-    this.main_Service.getRoadsDetail(this.id).subscribe((data: RoadsModel) => {
-      this.roadData = data;
+    this.main_Service.getWebsDetail(this.id).subscribe((data: WebcamModel) => {
+      this.webData = data;
     });
   }
-
 }

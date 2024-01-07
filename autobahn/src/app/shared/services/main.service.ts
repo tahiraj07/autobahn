@@ -34,10 +34,50 @@ export class MainService {
   }
 
   getRoadworks(selected: string): Observable<any> {
-    return this.http.get<any>(this._baseUrl+ selected +'/services/roadworks');
+    return this.http.get<any>(this._baseUrl + selected + '/services/roadworks');
   }
 
   getRoadsDetail(id: string) {
-    return this.http.get<any>(this._baseUrl+'details/roadworks/'+ id);
+    return this.http.get<any>(this._baseUrl + 'details/roadworks/' + id);
+  }
+
+  getWebcams(selected: string): Observable<any> {
+    return this.http.get<any>(this._baseUrl + selected + '/services/webcam');
+  }
+
+  getWebsDetail(id: string) {
+    return this.http.get<any>(this._baseUrl + 'details/webcam/' + id);
+  }
+
+  getParking(selected: string): Observable<any> {
+    return this.http.get<any>(this._baseUrl + selected + '/services/parking_lorry');
+  }
+
+  getParkingDetail(id: string) {
+    return this.http.get<any>(this._baseUrl + 'details/parking_lorry/' + id);
+  }
+
+  getWarning(selected: string): Observable<any> {
+    return this.http.get<any>(this._baseUrl + selected + '/services/warning');
+  }
+
+  getWarningDetail(id: string) {
+    return this.http.get<any>(this._baseUrl + 'details/warning/' + id);
+  }
+
+  getClosure(selected: string): Observable<any> {
+    return this.http.get<any>(this._baseUrl + selected + '/services/closure');
+  }
+
+  getClosureDetail(id: string) {
+    return this.http.get<any>(this._baseUrl + 'details/closure/' + id);
+  }
+
+  getElectric(selected: string): Observable<any> {
+    return this.http.get<any>(this._baseUrl + selected + '/services/electric_charging_station');
+  }
+
+  getElectricDetail(id: string) {
+    return this.http.get<any>(this._baseUrl + 'details/electric_charging_station/' + id);
   }
 }

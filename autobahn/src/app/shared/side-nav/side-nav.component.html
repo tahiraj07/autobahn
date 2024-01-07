@@ -2,45 +2,51 @@
     class="icare-nav sidebar bg-icare">
     <div class="max-width navbar-icon"
         routerLinkActive="active"
-        matTooltip="Dashboard"
+        matTooltip="Roads"
         matTooltipPosition="after"
-        [routerLink]="['dash']"
+        [routerLink]="['']"
         routerLinkActive="active" >
         <mat-icon>personal_video_24px</mat-icon>
     </div>
     <div class="max-width navbar-icon"
         routerLinkActive="active"
-        matTooltip="Facilities"
+        matTooltip="Webcams"
         matTooltipPosition="after"
-        [routerLink]="['reports']"
+        [routerLink]="['webcam']"
         routerLinkActive="active"
         >
         <mat-icon>domain_24px</mat-icon>
     </div>
     <div class="max-width navbar-icon"
         routerLinkActive="active"
-        matTooltip="IntelyPros"
+        matTooltip="Rest Areas"
         matTooltipPosition="after"
-        [routerLink]="['users']"
+        [routerLink]="['rest']"
         routerLinkActive="active"  >
         <mat-icon>group_24px</mat-icon>
     </div>
     <div class="max-width navbar-icon"
         routerLinkActive="active"
-        matTooltip="Onboarding"
-        matTooltipPosition="after" >
+        matTooltip="Reports"
+        matTooltipPosition="after"
+        [routerLink]="['reports']"
+        routerLinkActive="active" >
         <mat-icon>how_to_reg_24px</mat-icon>
     </div>
     <div class="max-width navbar-icon"
         routerLinkActive="active"
-        matTooltip="Credentialing"
-        matTooltipPosition="after" >
+        matTooltip="Suspensions"
+        matTooltipPosition="after"
+        [routerLink]="['suspensions']"
+        routerLinkActive="active" >
         <mat-icon>description_24px</mat-icon>
     </div>
-    <div class="max-width navbar-icon logout"
-        matTooltip="Logout"
+    <div class="max-width navbar-icon"
+        routerLinkActive="active"
+        matTooltip="Charging Stations"
         matTooltipPosition="after"
-        automation-id="click-navbar-icon-logout">
-        <mat-icon class="power-icon">power_settings_new</mat-icon>
+        [routerLink]="['stations']"
+        routerLinkActive="active" >
+        <mat-icon>description_24px</mat-icon>
     </div>
 </nav>

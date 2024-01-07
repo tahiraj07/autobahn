@@ -2,10 +2,136 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.mat-mdc-text-field-wrapper   {
-  border: 1px solid #2196F3!important;
-}
 
 .mat-mdc-select-value-text {
   color: #333;
+}
+
+.main-body {
+  display: flex;
+  flex-wrap: wrap;
+
+  app-side-nav {
+    width: 50px;
+  }
+
+  .right-side {
+    width: 100%;
+
+    .main-header {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 15px;
+
+      .search {
+        padding-left: 50px;
+        width: 30%;
+        margin-right: 10px;
+
+        .lbl-search {
+          color: #333;
+        }
+
+        .mdc-text-field__input {
+          color: #333 !important;
+        }
+      }
+    }
+
+    .mat-cell,
+    .mat-header-cell {
+      word-wrap: initial;
+      display: table-cell;
+      padding: 0px 10px;
+      line-break: unset;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+
+    .mat-row,
+    .mat-header-row {
+      display: table-row;
+    }
+
+    .table-section {
+      overflow-x: scroll;
+      margin-left: 50px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      padding: 10px;
+
+      .custom-table {
+
+        mat-row:nth-of-type(even),
+        tr[mat-row]:nth-of-type(even) {
+          background-color: #48A8B6;
+
+          &+.detail-row {
+            background-color: #48A8B6;
+          }
+
+          &.selected {
+            background-color: #e0ffff;
+          }
+        }
+
+        .row-hover:hover {
+          cursor: pointer;
+        }
+
+        .selected {
+          background-color: #e0ffff;
+        }
+
+        &.bordered-table {
+          border: 1px solid #d3d3d3;
+        }
+      }
+    }
+
+    .bordered-table-row {
+      min-height: 25px;
+      line-height: 14px;
+      border-bottom: 0;
+      border: 1px solid #d3d3d3;
+      border-radius: 5px;
+      margin-top: 3px;
+
+      mat-cell {
+        font-size: 11pt;
+      }
+
+      .center {
+        justify-content: center;
+      }
+
+      .right {
+        justify-content: flex-end;
+      }
+    }
+
+    .table-loading-spinner {
+      position: absolute !important;
+      z-index: 2;
+      top: 40%;
+      right: 44%;
+    }
+
+    .table-clickable {
+      tr {
+        cursor: pointer;
+      }
+
+      mat-cell,
+      mat-header-cell {
+        padding-left: 8px;
+      }
+    }
+  }
+}
+
+
+.mdc-text-field__input {
+  color: #333 !important;
 }
